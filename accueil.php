@@ -15,7 +15,9 @@
     <div class="button" id="ma_page"></div>
     <div class="button" id="devise">On pourrait mettre une devise ici</div>
     <div id ="rech"></div>
-    <div class="header" id="logo">LOGO</div>
+    <div class="header" id="logo">
+      <img src="images/logo.png" width="120px"></img>
+    </div>
   </div>
   <div class = "corps">
     <div class = "corps" id="nouveautes">
