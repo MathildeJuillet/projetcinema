@@ -7,24 +7,40 @@
     <title>Nom du site</title>
 </head>
 <body>
+
   <div class="header">
     <div class="button" id="accueil">Accueil</div>
-    <div class="button" id="connexion"></div>
-    <div class="button" id="recommandes"></div>
-    <div class="button" id="new"></div>
-    <div class="button" id="ma_page"></div>
+    <div class="button" id="connexion">Connexion</div>
+    <div class="button" id="recommandes">Recommandés</div>
+    <div class="button" id="new">Nouveautés</div>
+    <div class="button" id="ma_page">Ma page</div>
     <div id="devise">On pourrait mettre une devise ici</div>
     <div id ="rech"></div>
     <div class="header" id="logo"></div>
   </div>
+
   <div class = "corps">
-    <div class = "corps" id="nouveautes">
-        <p>div nouveautés<p>
+    <div class = "corps" id="nom_film">
+        <p>div nom du film<p>
     </div>
-    <div class = "corps" id="tires_au_hasard">
-        <p>div tirés au hasard<p>
+    <div class = "corps" id="affiche">
+        <p>div affiche<p>
+    </div>
+    <div class = "corps" id="synopsis">
+        <p>div synopsis<p>
+    </div>
+    <div class = "corps" id="casting">
+        <p>div casting<p>
+    </div>
+    <div class = "corps" id="bande_annonce">
+        <p>div bande_annonce<p>
+    </div>
+    <div class = "corps" id="boutons">
+        <p>div boutons<p>
     </div>
   </div>
+</body>
+
   <div class= "footer">
     <p>ceci est un footer</p>
     <div class="footer" id="Facebook">

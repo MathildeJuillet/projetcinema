@@ -1,0 +1,264 @@
+*{
+margin: 0px;
+}
+
+div.header{
+ position: absolute;
+ background-color: #FFAD38;
+ height: 15%;
+ width: 100%;
+ top: auto;
+ left: auto;
+ right: auto;
+ text-align: center;
+}
+
+div#logo
+{
+  background-image: url("../Images/logo.png");
+  background-repeat: no-repeat;
+  width : 120px;
+  background-color: #FF0038;
+  width: 17%;
+  height: 90%;
+  right: auto;
+  margin-left: 1%;
+  top: 5%;
+  left: auto;
+}
+
+
+div#devise{
+  position: absolute;
+  background-color: #F0FF09;
+  top: 5%;
+  width: 50%;
+  height: 50%;
+  right:auto;
+  left: 24%;
+  bottom: auto;
+  font-size: 36px;
+  color: #FFFAF0;
+  font-family: "Book Antiqua", Georgia, Serif;
+  text-shadow: -1px 0 #FFBC5D, 0 1px #7AACD8, 1px 0 #FFBC5D, 0 -1px #7AACD8;
+}
+
+div#rech{
+  position: absolute;
+  background-color: #696969;
+  top: 40%;
+  width: 18%;
+  height: 30%;
+  left : 81%;
+}
+
+
+div.button{
+  position: absolute;
+  top: auto;
+  width: 10%;
+  height: 20%;
+  bottom: 5%;
+  -moz-box-shadow:inset 0px 39px 0px -24px #ffa620;
+  -webkit-box-shadow:inset 0px 39px 0px -24px #ffa620;
+  box-shadow:inset 0px 39px 0px -24px #ffa620;
+  background-color:#f0a12b;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+  border:1px solid #ffffff;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  padding:6px 15px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffa620;
+}
+
+.button:hover{
+ background-color:#fa9c0f;
+}
+
+div#accueil{
+  left:20%;
+}
+
+div#connexion{
+  left: 32%;
+}
+
+div#recommandes{
+  left: 44%;
+}
+
+div#new{
+  left: 56%;
+}
+
+div#ma_page{
+  left: 68%;
+}
+
+
+
+
+div.corps
+{
+    position : absolute;
+    background-color: #FFFFFF;
+    height: 500px;
+    width: 100%;
+    right: auto;
+    left: auto;
+    top: 15%;
+    bottom: auto;
+}
+
+
+#nouveautes
+{
+    background-color: #FFFFFF;
+    height: 50%;
+    width: 100%;
+    right: auto;
+    left: auto;
+    top: auto;
+    bottom: 0%;
+
+}
+
+#tires_au_hasard
+{
+    background-color: #FFFFFF;
+    height: 50%;
+    width: 100%;
+    right: auto;
+    left: auto;
+    top: 0%;
+    bottom: auto;
+}
+
+div#nom_film
+{
+    margin : 1%;
+    background-color: #FF000F;
+    height: 10%;
+    width: 90%;
+    right: auto;
+    left: auto;
+    top: 0%;
+    bottom: auto;
+}
+
+div#affiche
+{
+  margin : 1%;
+  background-color: #FF00FF;
+  height: 70%;
+  width: 20%;
+  right: auto;
+  left: auto;
+  top: 12%;
+  bottom: auto;
+}
+
+div#bande_annonce
+{
+  margin : 1%;
+  background-color: #00FFFF;
+  height: 70%;
+  width: 50%;
+  right: auto;
+  left: 30%;
+  top: 15%;
+  bottom: auto;
+}
+
+div#casting
+{
+  margin : 1%;
+  background-color: #FFFF00;
+  height: 70%;
+  width: 20%;
+  right: auto;
+  left: auto;
+  top: 85%;
+  bottom: auto;
+}
+
+div#synopsis
+{
+  margin : 1%;
+  background-color: #0F0FFF;
+  height: 50%;
+  width: 75%;
+  right: 50%;
+  left: 22%;
+  top: 90%;
+  bottom: auto;
+}
+
+div#boutons
+{
+  margin : 1%;
+  background-color: #FF0F0F;
+  height: 15%;
+  width: 75%;
+  right: auto;
+  left: 22%;
+  top: 145%;
+  bottom: auto;
+}
+
+
+div.footer
+{
+    position : absolute;
+    background-color: #508DC4;
+    height: 7%;
+    width: 100%;
+    right: auto;
+    left: auto;
+    top:140%;
+    bottom: 0%;
+}
+
+div#Facebook
+{
+    background-image: url("../Images/Facebook.png");
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    height: auto;
+    width: 5%;
+    right: 2%;
+    left: auto;
+    top: 7%;
+    bottom: 7%;
+
+}
+
+div#Twitter
+{
+    background-color: #FFFFFF;
+    height: auto;
+    width: 5%;
+    right: 9%;
+    left: auto;
+    top: 7%;
+    bottom: 7%;
+
+}
+
+div#mentions_legales
+{
+    background-color: #FFFFFF;
+    height: auto;
+    width: 10%;
+    right: 17%;
+    left: auto;
+    top: 13%;
+    bottom: 13%;
+
+}
