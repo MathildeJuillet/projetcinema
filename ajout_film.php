@@ -18,7 +18,7 @@
 		<input type="text" name="affiche"><br><br>
 		date<br>
 		<input type="date" name="date"><br><br>
-	<input type="submit" value="S'inscrire">
+	<input type="submit" value="Ajouter">
 	</form>
 	</div>
 <?php
