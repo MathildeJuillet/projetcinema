@@ -75,10 +75,21 @@ session_start();
     <div class = "corps" id="synopsis">
       <p>div synopsis<p>
       </div>
+      <div class = "corps" id="boutons">
+        <form>
+          <p>Combien d'étoiles pour ce film ?</p>
+          <input type='radio' name='star' value='5S'>5
+          <input type='radio' name='star' value='4S'>4
+          <input type='radio' name='star' value='3S'>3
+          <input type='radio' name='star' value='2S'>2
+          <input type='radio' name='star' value='1S'>1<br>
+          <input type='button' name='avoir' value='A voir'>
+          <input type='button' name='arevoir' value='A revoir'>
+          <input type='button' name='partager' value='A faire découvrir'>
+        </form>
         </div>
-        <div class = "corps" id="boutons">
-          <p>div boutons<p>
-          </div>
+        </div>
+
         </div>
       </body>
 
