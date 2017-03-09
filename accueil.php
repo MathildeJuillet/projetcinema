@@ -56,7 +56,7 @@ session_start();
             if ($conn->connect_error) {
                die("Connection failed: " . $conn->connect_error);
             }
-          $sql = "SELECT titre, idf, affiche FROM film Limit 5";
+          $sql = "SELECT titre, idf, affiche FROM film Limit 6";
             $result = $conn->query($sql);
           echo"<table border = '2'>";
           if ($result->num_rows > 0) {
