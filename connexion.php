@@ -1,3 +1,6 @@
+<?php
+session_start();
+ ?>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -51,7 +54,7 @@
           if($row["pseudo"]==$pseudo && $row["mdp"]==$mdp){
             echo "Vous etes bien connectés";
             $_SESSION['login']=$pseudo;
-            $_SESSION['is_connected']=true;
+            header ('location: accueil.php');
           }
         }
         $compteur++;
