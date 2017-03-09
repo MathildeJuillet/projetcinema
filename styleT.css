@@ -150,11 +150,10 @@ div#tires_au_hasard
     top: 0%;
     bottom: auto;
 }
-
 div#nom_film
 {
     margin : 1%;
-    background-color: #FF000F;
+    /*background-color: #FF000F;*/
     height: 10%;
     width: 90%;
     right: auto;
@@ -162,13 +161,15 @@ div#nom_film
     top: 0%;
     bottom: auto;
 }
+#nom_film.h2{
+
+}
 
 div#affiche
 {
   margin : 1%;
-  background-color: #FF00FF;
-  height: 70%;
-  width: 20%;
+  height: auto;
+  width: 260px;
   right: auto;
   left: auto;
   top: 12%;
@@ -179,10 +180,10 @@ div#bande_annonce
 {
   margin : 1%;
   background-color: #00FFFF;
-  height: 70%;
-  width: 50%;
+  height: 315px;
+  width: 560px;
   right: auto;
-  left: 30%;
+  left: 40%;
   top: 15%;
   bottom: auto;
 }
@@ -190,19 +191,19 @@ div#bande_annonce
 div#casting
 {
   margin : 1%;
-  background-color: #FFFF00;
+  background-color: #FFAD38;
   height: 70%;
   width: 20%;
   right: auto;
   left: auto;
-  top: 85%;
+  top: 90%;
   bottom: auto;
 }
 
 div#synopsis
 {
   margin : 1%;
-  background-color: #0F0FFF;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
   height: 50%;
   width: 75%;
   right: 50%;
@@ -223,6 +224,15 @@ div#boutons
   bottom: auto;
 }
 
+#register_box{
+  position: absolute;
+  margin-left: 40%;
+  margin-right: auto;
+  margin-top: 12%;
+  border-width:2px;
+  border-style:solid;
+  border-color:#FFAD38;
+}
 
 div.corps
 {
