@@ -143,7 +143,7 @@ div.corps
 div#nom_film
 {
     margin : 1%;
-    background-color: #FF000F;
+    /*background-color: #FF000F;*/
     height: 10%;
     width: 90%;
     right: auto;
@@ -151,13 +151,15 @@ div#nom_film
     top: 0%;
     bottom: auto;
 }
+#nom_film.h2{
+
+}
 
 div#affiche
 {
   margin : 1%;
-  background-color: #FF00FF;
-  height: 70%;
-  width: 20%;
+  height: auto;
+  width: 260px;
   right: auto;
   left: auto;
   top: 12%;
@@ -168,10 +170,10 @@ div#bande_annonce
 {
   margin : 1%;
   background-color: #00FFFF;
-  height: 70%;
-  width: 50%;
+  height: 315px;
+  width: 560px;
   right: auto;
-  left: 30%;
+  left: 40%;
   top: 15%;
   bottom: auto;
 }
@@ -179,12 +181,12 @@ div#bande_annonce
 div#casting
 {
   margin : 1%;
-  background-color: #FFFF00;
+  background-color: #FFAD38;
   height: 70%;
   width: 20%;
   right: auto;
   left: auto;
-  top: 85%;
+  top: 90%;
   bottom: auto;
 }
 
