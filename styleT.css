@@ -2,15 +2,32 @@
 margin: 0px;
 }
 
-div.header{
- position: absolute;
- background-color: #FFAD38;
- height: 15%;
- width: 100%;
- top: auto;
- left: auto;
- right: auto;
- text-align: center;
+h2
+{
+  color: #C73B00;
+  text-align: left;
+}
+
+table
+{
+  font-weight: bolder;
+  color : transparent;
+  border-collapse: separate;
+  border-spacing: 35px 0px; /*horizontal vertical*/
+}
+
+td
+{
+  color: #C73B00;
+  text-align: center;
+  border-width: 7px;
+  border-color: #FF9400;
+  border-style: inset;
+}
+
+#table.nouveautes
+{
+  margin-left: 50%;
 }
 
 div#logo
@@ -18,7 +35,7 @@ div#logo
   background-image: url("../Images/logo.png");
   background-repeat: no-repeat;
   width : 120px;
-  background-color: #FF0038;
+  background-color: transparent;
   width: 17%;
   height: 90%;
   right: auto;
@@ -27,10 +44,9 @@ div#logo
   left: auto;
 }
 
-
 div#devise{
   position: absolute;
-  background-color: #F0FF09;
+  background-color: transparents;
   top: 5%;
   width: 50%;
   height: 50%;
@@ -52,6 +68,29 @@ div#rech{
   left : 81%;
 }
 
+div#accueil{
+  left:20%;
+}
+
+div#connexion{
+  left: 32%;
+}
+
+div#recommandes{
+  left: 44%;
+}
+
+div#new{
+  left: 56%;
+}
+
+div#ma_page{
+  left: 68%;
+}
+
+.button:hover{
+ background-color:#fa9c0f;
+}
 
 div.button{
   position: absolute;
@@ -77,63 +116,35 @@ div.button{
   text-shadow:0px 1px 0px #ffa620;
 }
 
-.button:hover{
- background-color:#fa9c0f;
+
+div.header{
+ position: absolute;
+ background-color: #FFAD38;
+ height: 15%;
+ width: 100%;
+ top: auto;
+ left: auto;
+ right: auto;
+ text-align: center;
 }
 
-div#accueil{
-  left:20%;
-}
-
-div#connexion{
-  left: 32%;
-}
-
-div#recommandes{
-  left: 44%;
-}
-
-div#new{
-  left: 56%;
-}
-
-div#ma_page{
-  left: 68%;
-}
-
-
-
-
-div.corps
+div#nouveautes
 {
-    position : absolute;
-    background-color: #FFFFFF;
-    height: 500px;
+    background-color: #FFD34A;
+    height: 70%;
     width: 100%;
     right: auto;
     left: auto;
-    top: 15%;
-    bottom: auto;
-}
-
-
-#nouveautes
-{
-    background-color: #FFFFFF;
-    height: 50%;
-    width: 100%;
-    right: auto;
-    left: auto;
-    top: auto;
+    top: 70%;
     bottom: 0%;
 
 }
 
-#tires_au_hasard
+div#tires_au_hasard
 {
-    background-color: #FFFFFF;
+    background-color: ##ffe4c4;
     height: 50%;
-    width: 100%;
+    width: 80%;
     right: auto;
     left: auto;
     top: 0%;
@@ -143,7 +154,7 @@ div.corps
 div#nom_film
 {
     margin : 1%;
-    /*background-color: #FF000F;*/
+    background-color: #FF000F;
     height: 10%;
     width: 90%;
     right: auto;
@@ -151,15 +162,13 @@ div#nom_film
     top: 0%;
     bottom: auto;
 }
-#nom_film.h2{
-
-}
 
 div#affiche
 {
   margin : 1%;
-  height: auto;
-  width: 260px;
+  background-color: #FF00FF;
+  height: 70%;
+  width: 20%;
   right: auto;
   left: auto;
   top: 12%;
@@ -170,10 +179,10 @@ div#bande_annonce
 {
   margin : 1%;
   background-color: #00FFFF;
-  height: 315px;
-  width: 560px;
+  height: 70%;
+  width: 50%;
   right: auto;
-  left: 40%;
+  left: 30%;
   top: 15%;
   bottom: auto;
 }
@@ -181,19 +190,19 @@ div#bande_annonce
 div#casting
 {
   margin : 1%;
-  background-color: #FFAD38;
+  background-color: #FFFF00;
   height: 70%;
   width: 20%;
   right: auto;
   left: auto;
-  top: 90%;
+  top: 85%;
   bottom: auto;
 }
 
 div#synopsis
 {
   margin : 1%;
-  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+  background-color: #0F0FFF;
   height: 50%;
   width: 75%;
   right: 50%;
@@ -215,17 +224,24 @@ div#boutons
 }
 
 
-div.footer
+div.corps
 {
     position : absolute;
-    background-color: #508DC4;
-    height: 7%;
+    background-color: #FFFFFF;
+    height: 500px;
     width: 100%;
     right: auto;
     left: auto;
-    top:140%;
-    bottom: 0%;
+    top: 15%;
+    bottom: auto;
 }
+
+
+
+
+
+
+
 
 div#Facebook
 {
@@ -263,4 +279,16 @@ div#mentions_legales
     top: 13%;
     bottom: 13%;
 
+}
+
+div.footer
+{
+    position : absolute;
+    background-color: #508DC4;
+    height: 7%;
+    width: 100%;
+    right: auto;
+    left: auto;
+    top:140%;
+    bottom: 0%;
 }

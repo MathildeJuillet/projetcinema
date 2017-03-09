@@ -8,23 +8,26 @@
 </head>
 <body>
   <div class="header">
-    <div class="button" id="accueil">Accueil</div>
-    <div class="button" id="connexion"></div>
-    <div class="button" id="recommandes"></div>
-    <div class="button" id="new"></div>
-    <div class="button" id="ma_page"></div>
+      <div class="button" id="accueil">Accueil</div>
+      <div class="button" id="connexion">Connexion</div>
+      <div class="button" id="recommandes">Recommandés</div>
+      <div class="button" id="new">Nouveautés</div>
+      <div class="button" id="ma_page">Ma</div>
+    
     <div id="devise">On pourrait mettre une devise ici</div>
     <div id ="rech">
-     <form action="recherche.php" method="Post">
-     <input type="text" name="requete" size="10">
-     <input type="submit" value="Ok">
-     </form>
+    <form action="recherche.php" method="Post">
+    <input type="text" name="nom" size="10" />
+    <input type="submit" value="Ok">
+    </form>
     </div>
     <div class="header" id="logo"></div>
+    </div>
+    
   </div>
   <div class = "corps">
     <div class = "corps" id="nouveautes">
-        <p>div nouveautés<p>
+        <h2>Nouveautés</h2>
           <?php
 
           $servername = "10.0.3.100";
@@ -37,7 +40,7 @@
             if ($conn->connect_error) {
                die("Connection failed: " . $conn->connect_error);
             }
-          $sql = "SELECT titre, affiche FROM film";
+          $sql = "SELECT titre, idf, affiche FROM film";
             $result = $conn->query($sql);
           echo"<table border = '2'>";
           if ($result->num_rows > 0) {
@@ -58,7 +61,7 @@
 
     </div>
     <div class = "corps" id="tires_au_hasard">
-        <p>div tirés au hasard<p>
+        <h2>Films au hasard</h2>
           <?php
 
           $servername = "10.0.3.100";
@@ -72,7 +75,7 @@
             }
                 echo"<table border = '2'>";
                 echo"<tr>";
-                for($i = 0; $i<=4; $i++ )
+                for($i = 0; $i<=5; $i++ )
                 {
                 $nb_rand =rand(1,6);
                 $sql = "SELECT idf,titre, affiche FROM film where idf=".$nb_rand;
