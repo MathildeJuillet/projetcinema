@@ -56,7 +56,7 @@ session_start();
             if ($conn->connect_error) {
                die("Connection failed: " . $conn->connect_error);
             }
-          $sql = "SELECT titre, idf, affiche FROM film";
+          $sql = "SELECT titre, idf, affiche FROM film Limit 5";
             $result = $conn->query($sql);
           echo"<table border = '2'>";
           if ($result->num_rows > 0) {
@@ -93,7 +93,7 @@ session_start();
                 echo"<tr>";
                 for($i = 0; $i<=5; $i++ )
                 {
-                $nb_rand =rand(1,6);
+                $nb_rand =rand(1,11);
                 $sql = "SELECT idf,titre, affiche FROM film where idf=".$nb_rand;
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
