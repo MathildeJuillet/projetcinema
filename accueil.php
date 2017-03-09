@@ -45,7 +45,7 @@
                echo"<tr>";
                while($row = $result->fetch_assoc()) {
 
-                echo"<td><img src=".$row["affiche"]." width='150px'>";
+                echo"<td><a href='page_produit.php?film=".$row['idf']."'><img src=".$row["affiche"]." width='150px'></a>";
                 echo"<br>".$row["titre"]."</td>";
 
                }
@@ -80,8 +80,8 @@
                 if ($result->num_rows > 0) {
                      // output data of each row
                      while($row = $result->fetch_assoc()) {
-                      echo"<td><img src=".$row["affiche"]." width='150px'>";
-                      echo"<br>".$row["titre"]."</td>";
+                echo"<td><a href='page_produit.php?film=".$row['idf']."'><img src=".$row["affiche"]." width='150px'></a>";
+                echo"<br>".$row["titre"]."</td>";
                      }
                   }
                 }
