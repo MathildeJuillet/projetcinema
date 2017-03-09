@@ -29,7 +29,8 @@
     <div class = "corps" id="nouveautes">
         <h2>Nouveautés</h2>
           <?php
-
+          session_start();
+          $_SESSION['is_connected']=false;
           $servername = "10.0.3.100";
           $username = "equipe";
           $password = "coucou";
