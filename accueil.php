@@ -14,7 +14,12 @@
     <div class="button" id="new"></div>
     <div class="button" id="ma_page"></div>
     <div id="devise">On pourrait mettre une devise ici</div>
-    <div id ="rech"></div>
+    <div id ="rech">
+     <form action="recherche.php" method="Post">
+     <input type="text" name="requete" size="10">
+     <input type="submit" value="Ok">
+     </form>
+    </div>
     <div class="header" id="logo"></div>
   </div>
   <div class = "corps">
@@ -40,7 +45,7 @@
                echo"<tr>";
                while($row = $result->fetch_assoc()) {
 
-                echo"<td><a href='page_produit.php?film=".$row['idf']."'><img src=".$row["affiche"]." width='150px'></a>";
+                echo"<td><img src=".$row["affiche"]." width='150px'>";
                 echo"<br>".$row["titre"]."</td>";
 
                }
@@ -75,8 +80,8 @@
                 if ($result->num_rows > 0) {
                      // output data of each row
                      while($row = $result->fetch_assoc()) {
-                    echo"<td><a href='page_produit.php?film=".$row['idf']."'><img src=".$row["affiche"]." width='150px'></a>";
-                    echo"<br>".$row["titre"]."</td>";
+                      echo"<td><img src=".$row["affiche"]." width='150px'>";
+                      echo"<br>".$row["titre"]."</td>";
                      }
                   }
                 }
