@@ -193,7 +193,7 @@ div#casting
 div#synopsis
 {
   margin : 1%;
-  background-color: #0F0FFF;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
   height: 50%;
   width: 75%;
   right: 50%;
