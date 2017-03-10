@@ -60,7 +60,7 @@ session_start();
     $dbname = "cinema";
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    $sql = "SELECT pseudo, mdp FROM utilisateur";
+    $sql = "SELECT pseudo, mdp, idu FROM utilisateur";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       $compteur=0;
@@ -69,7 +69,9 @@ session_start();
           if($row["pseudo"]==$pseudo && $row["mdp"]==$mdp){
             echo "Vous etes bien connectés";
             $_SESSION['login']=$pseudo;
-            header ('location: accueil.php');
+            $_SESSION['idu']=$row['idu'];
+            echo $_SESSION['idu'];
+            //header ('location: accueil.php');
           }
         }
         $compteur++;

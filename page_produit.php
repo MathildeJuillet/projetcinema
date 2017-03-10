@@ -76,17 +76,49 @@ session_start();
       <p>div synopsis<p>
       </div>
       <div class = "corps" id="boutons">
-        <form>
+        <form id="ajout_bouton" method="post" enctype="multipart/form-data">
           <p>Combien d'étoiles pour ce film ?</p>
           <input type='radio' name='star' value='5S'>5
           <input type='radio' name='star' value='4S'>4
           <input type='radio' name='star' value='3S'>3
           <input type='radio' name='star' value='2S'>2
           <input type='radio' name='star' value='1S'>1<br>
-          <input type='button' name='avoir' value='A voir'>
-          <input type='button' name='arevoir' value='A revoir'>
-          <input type='button' name='partager' value='A faire découvrir'>
+          <input type='submit' name='voir' value='A voir'>
+          <input type='submit' name='revoir' value='A revoir'>
+          <input type='submit' name='decouvrir' value='A faire découvrir'>
         </form>
+        <?php
+        $servername = "10.0.3.100";
+        $username = "equipe";
+        $password = "coucou";
+        $dbname = "cinema";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+        $id=$_GET['film'];
+        if(isset($_SESSION['idu'])){
+          $idu=$_SESSION['idu'];
+          if (isset($_POST['voir'])) {
+            $sql="insert into liste (idu, idf, voir) values ('$idu','$id', 1)";
+          }
+          if (isset($_POST['revoir'])) {
+            $sql="insert into liste (idu, idf, revoir) values ('$idu','$id',1)";
+          }
+          if (isset($_POST['decouvrir'])) {
+            $sql="insert into liste (idu, idf, decouvrir) values ('$idu','$id',1)";
+          }
+          echo $idu;
+          echo $sql;
+          if($conn->query($sql)==TRUE){
+          echo"OKAY !";
+        }
+        }
+
+        $conn->close();
+        ?>
         </div>
         </div>
 

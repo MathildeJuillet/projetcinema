@@ -38,14 +38,12 @@ session_start();
     </div>
     <div class="header" id="logo"></div>
     </div>
-    
+
   </div>
   <div class = "corps">
     <div class = "corps" id="nouveautes">
         <h2>Nouveautés</h2>
           <?php
-          session_start();
-          $_SESSION['is_connected']=false;
           $servername = "10.0.3.100";
           $username = "equipe";
           $password = "coucou";
@@ -56,7 +54,7 @@ session_start();
             if ($conn->connect_error) {
                die("Connection failed: " . $conn->connect_error);
             }
-          $sql = "SELECT titre, idf, affiche FROM film Limit 6";
+          $sql = "SELECT titre, idf, affiche FROM film";
             $result = $conn->query($sql);
           echo"<table border = '2'>";
           if ($result->num_rows > 0) {
@@ -93,7 +91,7 @@ session_start();
                 echo"<tr>";
                 for($i = 0; $i<=5; $i++ )
                 {
-                $nb_rand =rand(1,11);
+                $nb_rand =rand(1,12);
                 $sql = "SELECT idf,titre, affiche FROM film where idf=".$nb_rand;
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
