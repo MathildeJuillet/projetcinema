@@ -205,7 +205,7 @@ div#synopsis
 
 div#mes_films_preferes
 {
-  background-color: #696969;
+  background-color: #FFAD38;
   height: 50%;
   width: 80%;
   right: auto;
@@ -216,7 +216,7 @@ div#mes_films_preferes
 
 div#mes_films_a_regarder
 {
-  background-color: #690069;
+  background-color: #FFAD38;
   height: 50%;
   width: 80%;
   right: auto;
@@ -227,7 +227,7 @@ div#mes_films_a_regarder
 
 div#mes_films_a_revoir
 {
-  background-color: #006969;
+  background-color: #FFAD38;
   height: 50%;
   width: 80%;
   right: auto;
