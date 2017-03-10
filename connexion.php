@@ -71,7 +71,7 @@ session_start();
             $_SESSION['login']=$pseudo;
             $_SESSION['idu']=$row['idu'];
             echo $_SESSION['idu'];
-            //header ('location: accueil.php');
+            header ('location: ma_page.php');
           }
         }
         $compteur++;
