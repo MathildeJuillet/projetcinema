@@ -20,11 +20,8 @@ $pseudo=$_POST["pseudo"];
 $mdp=$_POST["mdp"];
 $is_connected=false;
 
-$servername = "10.0.3.100";
-$username = "equipe";
-$password = "coucou";
-$dbname = "cinema";
-$conn = new mysqli($servername, $username, $password, $dbname);
+include 'api.php';
+$conn = connexion_bdd();
 
 $sql = "SELECT pseudo, mdp FROM utilisateur";
 $result = $conn->query($sql);

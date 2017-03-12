@@ -1,12 +1,7 @@
 
 <?php
-$asked = $_POST['nom'];
-$servername = "10.0.3.100";
-$username = "equipe";
-$password = "coucou";
-$dbname = "cinema";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+include 'api.php';
+$conn = connexion_bdd();
  if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);}
 $sql = "SELECT titre, affiche,realisateur  FROM film WHERE titre LIKE '%".$asked ."%' ORDER BY titre";

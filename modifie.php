@@ -1,11 +1,8 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Modifier</title>
-</head>
-<body>
+<?php
+session_start();
+include 'api.php';
+afficher_menu();
+?>
 	<div id="register_box">
 	<form id="ajout" method="post" enctype="multipart/form-data">
 		ID<br>
@@ -19,11 +16,7 @@
 $titre=$_POST["id"];
 $lien=$_POST["lien"];
 
-$servername = "10.0.3.100";
-$username = "equipe";
-$password = "coucou";
-$dbname = "cinema";
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = connexion_bdd();
 
 $sql="UPDATE film set lien='$lien' where idf='$titre'";
   if($conn->query($sql)==TRUE){

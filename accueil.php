@@ -1,59 +1,13 @@
 <?php
 session_start();
- ?>
- <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="styleT.css" />
-    <title>Orange Mech'anique</title>
-</head>
-<body>
-  <div class="header">
-      <a href='accueil.php'><div class="button" id="accueil">Accueil</div></a>
-      <?php
-      if (isset($_SESSION['login'])) {
-        echo "<a href='deconnexion.php'><div class='button' id='connexion'>Deconnexion</div></a>";
-      }
-      else {
-        echo "<a href='connexion.php'><div class='button' id='connexion'>Connexion</div></a>";
-      }
-      ?>
-      <a href='recommandes.php'><div class="button" id="recommandes">Recommandés</div></a>
-      <a href='noueautes.php'><div class="button" id="new">Nouveautés</div></a>
-      <?php
-      if (isset($_SESSION['login'])) {
-        echo "<a href='ma_page.php'><div class='button' id='ma_page'>Ma page</div></a>";
-      }
-      else {
-        echo "<a href='register.php'><div class='button' id='ma_page'>S'inscrire</div></a>";
-      }
-      ?>
-    <div id="devise">Orange Mech'Anique</div>
-    <div id ="rech">
-    <form action="recherche.php" method="Post">
-    <input type="text" name="nom" size="10" />
-    <input type="submit" value="Ok">
-    </form>
-    </div>
-    <div class="header" id="logo"></div>
-    </div>
-
-  </div>
+include 'api.php';
+afficher_menu();
+?>
   <div class = "corps">
     <div class = "corps" id="nouveautes">
         <h2>Nouveautés</h2>
           <?php
-          $servername = "10.0.3.100";
-          $username = "equipe";
-          $password = "coucou";
-          $dbname = "cinema";
-
-           $conn = new mysqli($servername, $username, $password, $dbname);
-
-            if ($conn->connect_error) {
-               die("Connection failed: " . $conn->connect_error);
-            }
+            $conn = connexion_bdd();
           $sql = "SELECT titre, idf, affiche FROM film";
             $result = $conn->query($sql);
           echo"<table border = '2'>";
@@ -70,23 +24,13 @@ session_start();
             }
             echo"</table>";
             $conn->close();
-
           ?>
 
     </div>
     <div class = "corps" id="tires_au_hasard">
         <h2>Films au hasard</h2>
           <?php
-
-          $servername = "10.0.3.100";
-          $username = "equipe";
-          $password = "coucou";
-          $dbname = "cinema";
-          $conn = new mysqli($servername, $username, $password, $dbname);
-
-            if ($conn->connect_error) {
-               die("Connection failed: " . $conn->connect_error);
-            }
+            $conn = connexion_bdd();
                 echo"<table border = '2'>";
                 echo"<tr>";
                 for($i = 0; $i<=5; $i++ )
