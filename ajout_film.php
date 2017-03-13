@@ -29,8 +29,20 @@ if(isset($_POST["titre"]) && isset($_POST["lien"]) && isset($_POST["realisateur"
 	$conn = connexion_bdd();
 
 	$sql="insert into film (titre, lien, realisateur, affiche, date) values ('$titre', '$lien', '$rea', '$aff', '$date')";
-	  if($conn->query($sql)==TRUE){
+	if($conn->query($sql)==TRUE){
 	  echo"OK";
+	}
+
+	$sql="SELECT idf from film where titre='$titre' && realisateur='$rea'";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()){
+			$id=$row['idf'];
+		}
+	}
+
+	$sql="INSERT INTO notation (excellent, idf) values ('0', '$id')";
+	if($conn->query($sql)==TRUE){
 	}
 }
 ?>
