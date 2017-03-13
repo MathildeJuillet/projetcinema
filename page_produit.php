@@ -4,10 +4,11 @@ include 'api.php';
 afficher_menu();
 ?>
   <div class = "corps">
-      <?php
+<?php
       $conn = connexion_bdd();
       $id=$_GET['film'];
-      $sql = "SELECT * FROM film WHERE idf=$id";
+      $sql = "SELECT titre, affiche, lien, realisateur, excellent, bon, moyen, bof, mediocre from notation inner join film on notation.idf=film.idf where film.idf=$id;
+";
       $result = $conn->query($sql);
       if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -15,6 +16,11 @@ afficher_menu();
           $affiche=$row['affiche'];
           $lien=$row['lien'];
           $realisateur=$row['realisateur'];
+          $excellent=$row['excellent'];
+          $bon=$row['bon'];
+          $moyen=$row['moyen'];
+          $bof=$row['bof'];
+          $mediocre=$row['mediocre'];
         }
       }
       $conn->close();
@@ -49,13 +55,11 @@ afficher_menu();
         </form>
         <?php
         $conn = connexion_bdd();
-
-        if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-        }
+        
         $id=$_GET['film'];
         if(isset($_SESSION['idu'])){
           $idu=$_SESSION['idu'];
+          //----- Les listes -----
           if (isset($_POST['voir'])) {
             $sql="insert into liste (idu, idf, voir) values ('$idu','$id', 1)";
           }
@@ -65,13 +69,41 @@ afficher_menu();
           if (isset($_POST['decouvrir'])) {
             $sql="insert into liste (idu, idf, decouvrir) values ('$idu','$id',1)";
           }
-          echo $idu;
-          echo $sql;
           if($conn->query($sql)==TRUE){
-          echo"OKAY !";
-        }
-        }
+          }
+          //----- Les etoiles -----
+          if (isset($_POST['5S'])) {
+            $note='excellent';
+          }
+          if (isset($_POST['4S'])) {
+            $note='bon';
+          }
+          if (isset($_POST['3S'])) {
+            $note='moyen';
+          }
+          if (isset($_POST['2S'])) {
+            $note='bof';
+          }
+          if (isset($_POST['1S'])) {
+            $note='mediocre';
+          }
+          if(isset($_POST['1S']) || isset($_POST['2S']) || isset($_POST['3S']) || isset($_POST['4S']) || isset($_POST['5S'])){
+            $sql="SELECT $note from notation where idf='$id'";
+            $result = $conn->query($sql);
 
+            if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()){
+                $compteur=$row["$note"]+1;
+                $sql="UPDATE notation SET $note='$compteur' where idf='$id'";
+              }
+            }
+            else {
+              $sql="INSERT INTO notation ($note, idf) values ('1', '$id')";
+            }
+            if($conn->query($sql)==TRUE){
+            }
+          }
+        }
         $conn->close();
         ?>
         </div>
