@@ -169,10 +169,10 @@ div#affiche
   bottom: auto;
 }
 
-div#bande_annonce
+div#bande_annonce /* de la */
 {
   margin : 1%;
-  background-color: #00FFFF;
+  background-color: #FFFFFF;
   height: 315px;
   width: 560px;
   right: auto;
@@ -180,6 +180,19 @@ div#bande_annonce
   top: 15%;
   bottom: auto;
 }
+div#notation
+{
+  margin : 1%;
+  height: 100px;
+  width: 15%;
+  right: auto;
+  left: 22%;
+  top: 190px;
+  bottom: auto;
+}
+p{
+  color: #C73B00;
+}                           /* A la*/
 
 div#casting
 {
