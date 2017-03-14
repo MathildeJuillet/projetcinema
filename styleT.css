@@ -433,7 +433,7 @@ div.corps
 
 div.footer
 {
-    visibility: visible;
+    visibility: hidden;
     position : absolute;
     background-color: #F0D050;
     height: 7%;
