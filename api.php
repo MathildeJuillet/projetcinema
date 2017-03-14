@@ -46,7 +46,7 @@ function afficher_menu(){
       echo"<input type='submit' value='Ok'>";
       echo"</form>";
       echo"</div>";
-      echo"<div class='header' id='logo'></div>";
+      echo"<div class='header' id='logo'><img src='logo.png'/></div>";
     echo"</div>";
 }
 ?>
