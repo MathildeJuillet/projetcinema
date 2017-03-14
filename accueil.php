@@ -2,13 +2,14 @@
 session_start();
 include 'api.php';
 afficher_menu();
+$larg = 6;
 ?>
   <div class = "corps">
     <div class = "corps" id="nouveautes">
         <h2>Nouveautés</h2>
           <?php
             $conn = connexion_bdd();
-          $sql = "SELECT titre, idf, affiche FROM film";
+          $sql = "SELECT titre, idf, affiche FROM film limit".$larg;
           $result = $conn->query($sql);
           echo"<table border = '2'>";
           if ($result->num_rows > 0) {
@@ -33,7 +34,7 @@ afficher_menu();
             $conn = connexion_bdd();
                 echo"<table border = '2'>";
                 echo"<tr>";
-                for($i = 0; $i<=5; $i++ )
+                for($i = 0; $i<$larg; $i++ )
                 {
                 $sql="select count(titre) from film";
                 $result = $conn->query($sql);
