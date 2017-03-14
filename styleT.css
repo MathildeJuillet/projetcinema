@@ -114,6 +114,15 @@ div#ma_page{
 {
   height: 100px;
 }
+#btn_ajout_film{
+  margin-left:20%;
+}
+#btn_modi_lien{
+  margin-left:40%;
+}
+#btn_ajout_acteur{
+  margin-left:60%;
+}
 div.button{
   position: absolute;
   top: auto;
@@ -298,7 +307,7 @@ div#mes_films_a_revoir
   overflow-x: hidden;
 }
 
-#voir_la_suite{
+/*#voir_la_suite{
   background-color: #FFAD38;
   height: 120%;
   width: 80%;
@@ -308,9 +317,9 @@ div#mes_films_a_revoir
   bottom: auto;
   overflow-x: hidden;
   box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
-}
+}*/
 
-div#tous_films
+/*div#tous_films
 {
     background-color: #FFD34A;
     height: 180%;
@@ -319,7 +328,7 @@ div#tous_films
     left: 3%;
     top: 5%;
     bottom: auto;
-}
+}*/
 
 div#toutes_nouveautes
 {
