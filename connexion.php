@@ -36,6 +36,9 @@ afficher_menu();
         }
         $compteur++;
       }
+      if(!isset($_SESSION['idu'])){
+        echo "<p><span id='error'> ERREUR: Vos identifiants ne sont pas correctes </span></p>";
+      }
     }
     $conn->close();
     ?>
