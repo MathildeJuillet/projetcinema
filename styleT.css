@@ -110,7 +110,10 @@ div#ma_page{
 .button:hover{
  background-color:#fa9c0f;
 }
-
+#logo_cine
+{
+  height: 100px;
+}
 div.button{
   position: absolute;
   top: auto;
