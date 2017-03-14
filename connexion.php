@@ -5,7 +5,7 @@ afficher_menu();
 ?>
   <div class = "corps">
     <div id="register_box">
-      <p>Veulliez saisir vos informaions : </p><br>
+      <p>Veuillez saisir vos informations : </p><br>
       <form id="formulaire" method="post" enctype="multipart/form-data">
         Pseudo<br>
         <input type="text" name="pseudo"><br><br>
@@ -36,9 +36,11 @@ afficher_menu();
         }
         $compteur++;
       }
+      if (isset($_POST["pseudo"]) && isset($_POST["mdp"])) {
       if(!isset($_SESSION['idu'])){
-        echo "<p><span id='error'> ERREUR: Vos identifiants ne sont pas correctes </span></p>";
+        echo "<p><span id='error'> ERREUR: Vos identifiants ne sont pas corrects </span></p>";
       }
+    }
     }
     $conn->close();
     ?>
