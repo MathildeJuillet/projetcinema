@@ -32,7 +32,7 @@ function afficher_menu(){
          echo "<a href='connexion.php'><div class='button' id='connexion'>Connexion</div></a>";
        }
         echo "<a href='page_tous_les_films.php'><div class='button' id='recommandes'>Tous les films</div></a>";
-        echo "<a href='noueautes.php'><div class='button' id='new'>Nouveautés</div></a>";
+        echo "<a href='page_nouveautes.php'><div class='button' id='new'>Nouveautés</div></a>";
        if (isset($_SESSION['login'])) {
          echo "<a href='deconnexion.php'><div class='button' id='ma_page'>Deconnexion</div></a>";
        }
