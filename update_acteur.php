@@ -1,8 +1,9 @@
 <?php
 session_start();
 include 'api.php';
-/*afficher_menu();*/
+afficher_menu();
 ?>
+<div class="corps" id="ajouter_acteur">
 <form id="ajout" method="post" enctype="multipart/form-data">
   ID film<br>
   <input type="text" name="idf"><br><br>
@@ -57,5 +58,7 @@ include 'api.php';
       echo"OK";
     }
   }
-
 ?>
+</div>
+</body>
+</html>

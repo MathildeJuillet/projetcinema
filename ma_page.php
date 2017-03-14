@@ -3,13 +3,14 @@ session_start();
 include 'api.php';
 afficher_menu();
 ?>
-  <div class = "corps">
+  <div class = "corps">                
     <div class = "corps" id="bienvenu">
       <?php
-      echo "<h2>Bienvenu ".$_SESSION['login']." sur Orange Mech'anique !";
+      echo "<h2>Bienvenu ".$_SESSION['login']." sur Orange Mech'anique !</h2>";
       if ($_SESSION['login']=='benji' || $_SESSION['login']=='Admin') {
-        echo "<a href='ajout_film.php'><div class='button'>Ajouter film</div></a><br>";
-        echo "<a href='modifie.php'><div class='button'>Modifier lien yt</div></a>";
+        echo "<a href='ajout_film.php' id='btn_ajout_film'><div class='button'>Ajouter film</div></a><br>";
+        echo "<a href='modifie.php' id='btn_modi_lien'><div class='button'>Modifier lien yt</div></a>";
+        echo "<a href='update_acteur.php' id='btn_ajout_acteur'><div class='button'>Ajouter acteur</div></a>";
       }
       ?>
     </div>
@@ -25,7 +26,7 @@ afficher_menu();
                echo"<tr>";
                while($row = $result->fetch_assoc()) {
                 echo"<td><a href='page_produit.php?film=".$row['idf']."'><img src=".$row["affiche"]." width='150px'></a>";
-                echo"<br>".$row["titre"]."<br><a href='suppression.php?film=".$row['idf']."&type=revoir'><img src='croix.png' width='15px'></img></a></td>";
+                echo $row["titre"]."<br><a href='suppression.php?film=".$row['idf']."&type=revoir'><img src='croix.png' width='15px'></img></a></td>";
                }
                echo "</tr>";
             }
@@ -48,7 +49,7 @@ afficher_menu();
              while($row = $result->fetch_assoc()) {
 
               echo"<td><a href='page_produit.php?film=".$row['idf']."'><img src=".$row["affiche"]." width='150px'></a>";
-              echo"<br>".$row["titre"]."<br><a href='suppression.php?film=".$row['idf']."&type=revoir'><img src='croix.png' width='15px'></img></a></td>";
+              echo$row["titre"]."<br><a href='suppression.php?film=".$row['idf']."&type=voir'><img src='croix.png' width='15px'></img></a></td>";
 
              }
              echo "</tr>";
@@ -70,7 +71,7 @@ afficher_menu();
              echo"<tr>";
              while($row = $result->fetch_assoc()) {
               echo"<td><a href='page_produit.php?film=".$row['idf']."'><img src=".$row["affiche"]." width='150px'></a>";
-              echo"<br>".$row["titre"]."<br><a href='suppression.php?film=".$row['idf']."&type=revoir'><img src='croix.png' width='15px'></img></a></td>";
+              echo $row["titre"]."<br><a href='suppression.php?film=".$row['idf']."&type=decouvrir'><img src='croix.png' width='15px'></img></a></td>";
 
              }
              echo "</tr>";
