@@ -9,7 +9,7 @@ afficher_menu();
           <?php
             $conn = connexion_bdd();
           $sql = "SELECT titre, idf, affiche FROM film";
-            $result = $conn->query($sql);
+          $result = $conn->query($sql);
           echo"<table border = '2'>";
           if ($result->num_rows > 0) {
                // output data of each row
@@ -35,7 +35,14 @@ afficher_menu();
                 echo"<tr>";
                 for($i = 0; $i<=5; $i++ )
                 {
-                $nb_rand =rand(1,12);
+                $sql="select count(titre) from film";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                  while($row = $result->fetch_assoc()){
+                    $nbr_film=$row['count(titre)'];
+                  }
+                }
+                $nb_rand =rand(1,$nbr_film);
                 $sql = "SELECT idf,titre, affiche FROM film where idf=".$nb_rand;
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {

@@ -4,7 +4,7 @@ include 'api.php';
 afficher_menu();
 ?>
   <div class = "corps">
-<?php
+      <?php
       $conn = connexion_bdd();
       $id=$_GET['film'];
       $sql = "SELECT titre, affiche, lien, realisateur, excellent, bon, moyen, bof, mediocre from notation inner join film on notation.idf=film.idf where film.idf=$id;
@@ -23,18 +23,33 @@ afficher_menu();
           $mediocre=$row['mediocre'];
         }
       }
-      $conn->close();
+      $moyenne=((($excellent*5)+($bon*4)+($moyen*3)+($bof*2)+($mediocre*1))/($excellent+$bon+$moyen+$bof+$mediocre));
       echo "<div class = 'corps' id='nom_film'>";
       echo "<h2>".$titre."<h2>";
       echo "</div>";
       echo "<div class = 'corps' id='affiche'>";
       echo "<img src='$affiche' width='260px'></img>";
       echo "</div>";
+      echo "<div class = 'corps' id='notation'>";
+      echo"<p>Notation</p><br>";
+      echo"<p>Moyenne : $moyenne/5</p>";
+      echo "</div>";
       echo "<div class = 'corps' id='bande_annonce'>";
       echo "<iframe width='560' height='315' src='$lien' frameborder='0' allowfullscreen></iframe>"; //Le lien n'est pas bon il faut du embed
       echo "</div>";
       echo "<div class = 'corps' id='casting'>";
-      echo "<p>Réalisateur : <br>$realisateur<p>";
+      echo "<h2>Réalisateur :</h2><br><p>$realisateur<p>";
+      $sql1="SELECT film.idf, acteur.ida, acteur.nom, acteur.prenom from film_acteur inner join film on film_acteur.idf=film.idf inner join acteur on film_acteur.ida=acteur.ida where film.idf='$id'";
+      $result = $conn->query($sql1);
+      echo"<br><h2>Acteurs :</h2><br>";
+      if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          $nom=$row['nom'];
+          $prenom=$row['prenom'];
+          echo "<p>$nom $prenom</p><br>";
+        }
+      }
+      $conn->close();
       echo "</div>";
       ?>
 
@@ -44,18 +59,19 @@ afficher_menu();
       <div class = "corps" id="boutons">
         <form id="ajout_bouton" method="post" enctype="multipart/form-data">
           <p>Combien d'étoiles pour ce film ?</p>
-          <input type='radio' name='star' value='5S'>5
-          <input type='radio' name='star' value='4S'>4
-          <input type='radio' name='star' value='3S'>3
-          <input type='radio' name='star' value='2S'>2
-          <input type='radio' name='star' value='1S'>1<br>
+          <input type='submit' name='5S' value='5' class="star_button">
+          <input type='submit' name='4S' value='4' class="star_button">
+          <input type='submit' name='3S' value='3' class="star_button">
+          <input type='submit' name='2S' value='2' class="star_button">
+          <input type='submit' name='1S' value='1' class="star_button"><br>
+          <p>Tu peux l'ajouter dans une ou plusieurs liste :</p>
           <input type='submit' name='voir' value='A voir'>
           <input type='submit' name='revoir' value='A revoir'>
           <input type='submit' name='decouvrir' value='A faire découvrir'>
         </form>
         <?php
         $conn = connexion_bdd();
-        
+
         $id=$_GET['film'];
         if(isset($_SESSION['idu'])){
           $idu=$_SESSION['idu'];
