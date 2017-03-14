@@ -393,8 +393,8 @@ div.corps
 
 #Facebook
 {
-    background-image: url("../Images/Facebook.png");
-    background-repeat: no-repeat;
+    /*background-image: url("../Facebook.png");
+    background-repeat: no-repeat;*/
     background-color: #FFFFFF;
     height: auto;
     width: 5%;
@@ -407,8 +407,8 @@ div.corps
 
 #Twitter
 {
-    background-image: url("../Images/Twitter.png");
-    background-repeat: no-repeat;
+    /*background-image: url("../Twitter.png");
+    background-repeat: no-repeat;*/
     background-color: #FFFFFF;
     height: auto;
     width: 5%;
