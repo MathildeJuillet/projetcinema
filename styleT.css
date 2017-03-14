@@ -38,6 +38,11 @@ div#logo
   top: 5%;
   left: auto;
 }
+#error{
+  color: #FF0000;
+  /*top: 20%;*/
+  margin-left: 35%;
+}
 
 div#devise{
   position: absolute;
