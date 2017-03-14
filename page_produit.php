@@ -7,7 +7,7 @@ afficher_menu();
       <?php
       $conn = connexion_bdd();
       $id=$_GET['film'];
-      $sql = "SELECT titre, affiche, lien, realisateur, excellent, bon, moyen, bof, mediocre from notation inner join film on notation.idf=film.idf where film.idf=$id;
+      $sql = "SELECT titre, affiche, lien, realisateur, excellent, bon, moyen, bof, mediocre, synopsis from notation inner join film on notation.idf=film.idf where film.idf=$id;
 ";
       $result = $conn->query($sql);
       if ($result->num_rows > 0) {
@@ -21,6 +21,7 @@ afficher_menu();
           $moyen=$row['moyen'];
           $bof=$row['bof'];
           $mediocre=$row['mediocre'];
+          $synopsis = $row['synopsis'];
         }
       }
       $moyenne=((($excellent*5)+($bon*4)+($moyen*3)+($bof*2)+($mediocre*1))/($excellent+$bon+$moyen+$bof+$mediocre));
@@ -49,13 +50,16 @@ afficher_menu();
           echo "<p>$nom $prenom</p><br>";
         }
       }
+      echo "<div class = 'corps' id='synopsis'>";
+      echo "<img src='$synopsis'/>";
+      echo "</div>";
       $conn->close();
       echo "</div>";
       ?>
 
-    <div class = "corps" id="synopsis">
+    <!--<div class = "corps" id="synopsis">
       <p>div synopsis<p>
-      </div>
+      </div>-->
       <div class = "corps" id="boutons">
         <form id="ajout_bouton" method="post" enctype="multipart/form-data">
           <p>Combien d'étoiles pour ce film ?</p>
