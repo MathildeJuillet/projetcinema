@@ -35,6 +35,13 @@ table
   border-spacing: 35px 0px; /*horizontal vertical*/
 }
 
+#message_erreur
+{
+  font-size: 160%;
+  margin-top: 15%;
+  margin-left: 25%;
+  color:red;
+}
 td
 {
   color: #C73B00;
