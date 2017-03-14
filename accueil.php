@@ -34,7 +34,7 @@ $larg = 6;
             $conn = connexion_bdd();
                 echo"<table border = '2'>";
                 echo"<tr>";
-                for($i = 0; $i<$larg; $i++ )
+                for($i = 0; $i<=$larg; $i++ )
                 {
                 $sql="select count(titre) from film";
                 $result = $conn->query($sql);
