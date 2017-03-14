@@ -1,7 +1,13 @@
 *{
 margin: 0px;
 }
-
+h6
+{
+  font-size: 150%;
+  margin-top: 5%;
+  margin-left: 25%;
+  color:red;
+}
 h2
 {
   color: #C73B00;
