@@ -6,8 +6,8 @@ afficher_menu();
   <div class = "corps">
 <?php
 $asked = $_POST['nom'];
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = connexion_bdd();
+//$conn = new mysqli($servername, $username, $password, $dbname);
  if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);}
 $sql = "SELECT idf,titre, affiche,realisateur  FROM film WHERE titre LIKE '%".$asked ."%' ORDER BY titre";
