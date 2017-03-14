@@ -49,4 +49,73 @@ function afficher_menu(){
       echo"<div class='header' id='logo'><img id='logo_cine' src='logo.png'/></div>";
     echo"</div>";
 }
+function afficher_colonne($sql, $type){
+  $larg = 6;
+  $conn = connexion_bdd();
+  $nb_film ="select count (titre) from film";
+  $result = $conn->query($sql);
+  $compteur=0;
+  if($type=='revoir' || $type=='voir'){
+    echo"<h2>mes films à $type</h2>";
+  }
+  if($type=='decouvrir'){
+      echo"<h2>mes films à faire découvrir</h2>";
+  }
+  echo"<table border = '2'>";
+
+        if ($result->num_rows > 0)
+        {
+          $i=1;
+             // output data of each row
+             while($row = $result->fetch_assoc()) {
+
+                if ($i%$larg == 1)
+                {
+                echo "<br><tr>";
+                }
+                      echo"<td><a href='page_produit.php?film=".$row['idf']."'>
+                      <img src=".$row["affiche"]." width='150px'></a>";
+                      if($type=='revoir' || $type=='voir' || $type=='decouvrir'){
+                        echo $row["titre"]."<br><a href='suppression.php?film=".$row['idf']."&type=$type'><img src='croix.png' width='15px'></img></a></td>";
+                      }
+                      elseif($type=='null'){
+                        echo"<br>".$row["titre"]."</td>";
+                      }
+                  if ( $i%$larg== 0)
+                  {
+                  echo "</tr>";
+                  $compteur++;
+                  }
+                  $i++;
+             }
+             if ($i%$larg != 0)
+             {
+              $k = ($larg+1)-$i%$larg;
+              echo "<!-- $k-->";
+              for ($j=0 ; $j<$k; $j++)
+              {
+
+                echo "<td> </td>";
+              }
+              echo "</tr>";
+             }
+           }
+
+        echo"</table>";
+
+    $conn->close();
+    $pixels=310*($compteur+1);
+    echo "<style type='text/css'>";
+    echo"#tous_films, #voir_la_suite{";
+    echo"background-color: #FFD34A;";
+    echo"height: $pixels"."px;";
+    echo"width: 95%;";
+    echo"right: 5%;";
+    echo"left: 3%;";
+    echo"top: 20%;";
+    echo "box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);";
+    echo"bottom: auto;}";
+    echo"</style>";
+}
+
 ?>
