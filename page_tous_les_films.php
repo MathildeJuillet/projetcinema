@@ -35,7 +35,7 @@ $larg = 6;
                      }
                      if ($i%$larg != 0)
                      {
-                      $k = (larg+1)-$i%$larg;
+                      $k = ($larg+1)-$i%$larg;
                       echo "<!-- $k-->";
                       for ($j=0 ; $j<$k; $j++)
                       {
