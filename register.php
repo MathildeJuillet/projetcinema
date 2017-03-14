@@ -3,6 +3,7 @@ session_start();
 include 'api.php';
 afficher_menu();
 ?>
+<div class = "corps">
 	<div id="register_box">
 	<form id="formulaire" method="post" enctype="multipart/form-data">
 		Nom<br>
@@ -23,7 +24,9 @@ afficher_menu();
 <?php
 
 $conn = connexion_bdd();
-if(isset($_POST["email"]) && isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["pseudo"]) && isset($_POST["mdp1"]) && isset($_POST["mdp2"])){
+if(isset($_POST["email"]) && isset($_POST["nom"]) &&
+ isset($_POST["prenom"]) && isset($_POST["pseudo"]) &&
+ isset($_POST["mdp1"]) && isset($_POST["mdp2"])){
   $courriel=$_POST["email"];
   $nom=$_POST["nom"];
   $prenom=$_POST["prenom"];
@@ -31,17 +34,24 @@ if(isset($_POST["email"]) && isset($_POST["nom"]) && isset($_POST["prenom"]) && 
   $mdp1=$_POST["mdp1"];
   $mdp2=$_POST["mdp2"];
 
-  if (filter_var($courriel, FILTER_VALIDATE_EMAIL) && preg_match("/^[a-zA-Z ]*$/",$nom) && preg_match("/^[a-zA-Z ]*$/",$prenom) && $mdp1==$mdp2) {
+  if (filter_var($courriel, FILTER_VALIDATE_EMAIL) &&
+	 preg_match("/^[a-zA-Z ]*$/",$nom) && preg_match("/^[a-zA-Z ]*$/",$prenom)
+	 && $mdp1==$mdp2) {
 
-  $sql="insert into utilisateur (nom, prenom, email, pseudo, mdp) values ('$nom','$prenom','$courriel','$pseudo', '$mdp1')";
+  $sql="insert into utilisateur (nom, prenom, email, pseudo, mdp) values
+	('$nom','$prenom','$courriel','$pseudo', '$mdp1')";
     if($conn->query($sql)==TRUE){
     echo"Merci de votre enregistrement";
     $_SESSION['login']=$pseudo;
     $_SESSION['idu']=$row['idu'];
     header ('location: ma_page.php');
-    }
+	}
   }
+	else {
+		echo "<p><span id='message_erreur'>ERREUR : Vos identifiants ne sont pas corrects </span></p>";
+	}
 }
 ?>
+</div>
 </body>
 </html>
